@@ -1,0 +1,11 @@
+<p><button {{action "offerHide"}} class="link link_inlineBlock">No</button> <button {{action "offerShow"}} class="link link_primary link_inlineBlock">Yes</button></p>
+
+{{#if displayForm}}
+    {{add-book onAdd=(action 'addBook')}}
+    <div class="msg msg_error">
+        {{#if responseMessage}}
+            {{responseMessage}}
+        {{/if}}
+    </div>
+{{/if}}
+

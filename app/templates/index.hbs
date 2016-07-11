@@ -1,0 +1,81 @@
+<div class="container">
+
+    <header class="header">
+     <h1 class="header--title">My Books</h1> <span>{{toggle-widget}}</span>
+    </header>
+
+    <nav class="navbar">
+        <ul class="navbar--list">
+            <li class="navbar--item">
+                <a href="#">El Pooch</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#">The flight</a>
+            </li>
+            <li class="navbar--item">
+                <a href="#">Top 10 Australian beaches</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="main" class="backdrop backdrop_smallOnly">
+        <span></span>
+        <div class="row">
+
+            <section class="column">
+
+                <article class="article article_welcome clearfix">
+                    <div class="article--body">
+                        <h2 class="article--title">Welcome back!</h2>
+
+                        <p>Have you read any new books?</p>
+                    </div>
+
+
+                    <footer class="article--footer">
+                        {{book-widget books=model}}
+                    </footer>
+                </article>
+
+                {{#each model as |book|}}
+                <article class="article article_imgLeft clearfix">
+
+                    <figure class="article--img">
+                        <img src="{{book.thumb}}" alt="{{ book.title }}" />
+                    </figure>
+
+                    <div class="article--body">
+                        <h2 class="article--title">{{ book.title }}</h2>
+                        <p>{{ book.author }}</p>
+                        <footer class="article--footer">
+                            <p><a href="#" class="link link_inlineBlock p_uppercase">Free sample</a><a href="#" class="link link_primary link_inlineBlock p_uppercase">Review</a></p>
+                        </footer>
+                    </div>
+
+                </article>
+                {{/each}}
+
+            </section>
+            <!-- Column for hero image articles -->
+            <section class="column">
+
+                <article class="article clearfix">
+                    <figure class="article--img">
+                        <img src="/assets/images/thumb-3.png" alt="" />
+                    </figure>
+                    <div class="article--body">
+                        <h2 class="article--title">Welcome back!</h2>
+                        <p>Have you read any new books?</p>
+                    </div>
+                    <footer class="article--footer">
+                        <p><a href="#" class="link link_inlineBlock p_uppercase">Free sample</a><a href="#" class="link link_primary link_inlineBlock p_uppercase">Review</a></p>
+                    </footer>
+                </article>
+
+            </section>
+        </div>
+
+    </div>
+
+</div>
+

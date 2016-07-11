@@ -1,0 +1,446 @@
+/*
+    ==========================================================================
+        Normalize
+    ==========================================================================
+*/
+
+// Import and include normalize.css
+@import "bower_components/normalize-scss/sass/normalize";
+@include normalize();
+
+/*!
+                        *** DEFAULT STYLES ***
+HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+@import "boilerplate";
+
+
+/*
+    ==========================================================================
+       Theme custom styles
+    ==========================================================================
+*/
+
+// Make compass sass mixens available
+@import "bower_components/compass-sass-mixins/lib/compass";
+@import "bower_components/compass-sass-mixins/lib/compass/css3";
+@import "bower_components/compass-sass-mixins/lib/animate";
+
+/* Google fonts  http://www.google.com/fonts#UsePlace:use/Collection:Roboto */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/*
+ *  Mixens
+ */
+
+// Conver px to em
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @return ($pixels / $context) * 1em;
+}
+
+/*
+ *  Variables
+ */
+
+$color: #fff;
+$max-width: 1024px;        // document max width
+$brandcolor: #eb1561;      // base brand colour
+$color_white: $color;        // base white colour
+$roboto: 'Roboto', serif;  // Custom font variable.
+
+$bp-small : 24em;
+$bp-small-2 : 29.75em;
+$bp-small-3 : 39.8em;
+$bp-med : 46.8em;
+$bp-med-2 : 48em;
+$bp-large : 50em;
+$bp-large-2 : 54.5em;
+$bp-xl : 60em;
+$bp-xl-2 : 67em;
+
+/*
+ *  Theme
+ */
+
+body {
+    background: #fff;
+    margin: 0;
+    padding:0;
+    font-family: $roboto;
+}
+
+/*
+ *  container
+ */
+
+.container {
+    max-width: $max-width;
+    min-width: em(320);
+    margin: 0 auto;
+    background: #e3e3e3;
+}
+
+
+/*
+ *  grid / columns
+ */
+
+/* ===== == = === 48em ( px) === = == ===== */
+
+@media only screen and (min-width: 48em) {
+    .row{
+
+       display: -webkit-flex;
+       display: flex;
+       -webkit-flex-direction: row;
+       flex-direction: row;
+
+    }
+    .column {
+        max-width: 50%;
+        -webkit-flex: 1 0 0;
+       flex: 1 0 0;
+       margin: 0.5em;
+    }
+}
+
+/*
+ *  buttons
+ */
+
+.link, a {
+    color: Black;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.link_primary {
+    color: orange;
+}
+
+.link_block {
+    display: block;
+}
+
+.link_inlineBlock {
+    display: inline-block;
+    padding: 1em;
+}
+
+/*
+ *  Header
+ */
+
+.header {
+    background-color: $brandcolor;
+    padding: 1em;
+}
+
+.header--title {
+    color:  $color;
+    margin: 0 0 0 1em;
+}
+
+.header--title_inverse {
+
+}
+
+.header--toggleNav{
+    cursor: pointer;
+    left: 1em;
+    position: absolute;
+    top: 2em;
+}
+
+@media only screen and (min-width: 37.5em) {
+    .header--title {
+        margin-left: 0;
+    }
+    .header--toggleNav{
+        display: none;
+    }
+}
+
+
+/*
+ *  Navigation
+ */
+
+.navbar{
+    background-color: $color_white;
+    margin: 0;
+    position: relative;
+}
+
+.navbar--list{
+    background-color: $color_white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    display: none;
+    .js_navActive & {
+        display: block;
+        z-index: 103;
+    }
+}
+
+.navbar--item{
+    border-bottom: em(1) solid #ccc;
+    padding: 1em;
+}
+
+.navbar--link{
+
+}
+
+@media only screen and (min-width: 37.5em) {
+    .navbar--list{
+        display: block; // override with cascade for larger browsers
+        position: relative;
+    }
+    .navbar--item{
+        border-bottom: none;
+        display: inline-block;
+    }
+}
+
+/*
+ *  articles
+ */
+
+.article {
+    background-color: $color_white;
+    margin-bottom: 1em;
+    @include box-shadow(#dddddd 2px 2px 10px);
+    @include border-radius(4px, 4px);
+    position: relative;
+}
+
+.article--img {
+    margin: 0;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.article--body {
+    padding:1em;
+}
+
+.article--title {
+    margin:0 0 1em;
+}
+
+.article--footer {
+    border-top: 1px solid #dcdcdc;
+}
+
+.article_welcome {
+    .article--title {
+        color: $brandcolor;
+    }
+}
+
+// artcle with image positioned to left.
+.article_imgLeft {
+
+    .article--body {
+        padding-left: 11em;
+    }
+
+    .article--footer {
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right: 0;
+        margin-left: 10em;
+    }
+
+    .article--img {
+        width: 10em;
+        float: left;
+        margin: 0;
+        padding: 0;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+/*
+ *  forms
+ */
+
+.form {
+    padding: 0 1em 1em;
+}
+
+.form--label {
+    display: block;
+}
+
+
+.icon_burger {
+    height: auto;
+    display: inline-block;
+    span{
+       background-color: #fff;
+       display: block;
+        width: 24px;
+        height: 3px;
+        border-radius: 1px;
+        margin-bottom: 4px;
+    }
+}
+
+
+
+/* Messages */
+.msg {
+    padding: 1em;
+}
+
+.msg_error {
+    color: red;
+}
+
+
+
+
+
+
+
+
+/* ===== == = === 20em (320px) === = == ===== */
+
+@media only screen and (min-width : 20em) {
+}
+
+/* ===== == = === 30em (480px) === = == ===== */
+
+@media only screen and (min-width : 30em) {
+
+}
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: 37.5em) {
+
+}
+
+/* ===== == = === 48em (768px) === = == ===== */
+
+@media only screen and (min-width : 48em) {
+}
+
+/* ===== == = === 56.25em (900px) === = == ===== */
+
+@media only screen and (min-width : 56.25em) {
+}
+
+/* ===== == = === 68.75em (1100px) === = == ===== */
+
+@media only screen and (min-width : 68.75em) {
+}
+
+/* ===== == = === 81.25em (1300px) === = == ===== */
+
+@media only screen and (min-width : 81.25em) {
+}
+
+
+/*
+    backdrop
+*/
+
+.backdrop {
+  position: relative;
+  > span {
+    display: block;
+    content: "";
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    @include transition(opacity 400ms, visibility 300ms);
+  }
+  &:after {
+    content: "";
+    z-index: 101;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    margin-top: -25px;
+    border: 8px solid rgba(255,255,255,0.1);
+    border-top-color: rgb(183, 183, 183);
+    border-left-color: rgb(183, 183, 183);
+    border-radius: 50%;
+    @include transition(opacity 600ms, visibility 600ms);
+    @include animation(loading 800ms linear 0s infinite);
+    //animation-play-state: paused;
+  }
+  // display the nav adding body class js_navActive
+  .js_navActive & {
+    > span {
+      visibility: visible;
+      opacity: 0.7;
+    }
+    // enable preloader if loading
+    .js_isLoading & {
+        &:after {
+          visibility: visible;
+          opacity: 1;
+        }
+    }
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+    .backdrop_smallOnly {
+        .js_navActive & {
+            > span {
+            visibility: hidden;
+            opacity: 0;
+            }
+            // enable preloader if loading
+            .js_isLoading & {
+                &:after {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include keyframes(loading) {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@import "helpers";
