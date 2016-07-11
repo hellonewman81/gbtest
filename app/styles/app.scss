@@ -91,22 +91,17 @@ body {
 }
 
 
-/* ===== == = === 48em ( px) === = == ===== */
+/* ===== == = === 48em ( 768px ) === = == ===== */
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: $bp-med-2) {
     .row{
-
-       display: -webkit-flex;
-       display: flex;
-       -webkit-flex-direction: row;
-       flex-direction: row;
-
+       @include display-flex;
+       @include flex-direction(row);
     }
     .column {
         max-width: 50%;
-        -webkit-flex: 1 0 0;
-       flex: 1 0 0;
-       margin: 0.5em;
+        @include flex(1 0 0);
+        margin: 0.5em;
     }
 }
 
@@ -131,6 +126,15 @@ body {
    text-transform: uppercase;
 }
 
+.text--title {
+    font-size: 1.8em;
+}
+
+@media only screen and (max-width: $bp-med) {
+    .text--title {
+        font-size: 1.4em;
+    }
+}
 
 /*
  *  buttons
@@ -230,7 +234,7 @@ body {
 
 }
 
-@media only screen and (max-width: 37.4em) {
+@media only screen and (max-width: $bp-med) {
     .navbar--link{
         display: block;
     }
@@ -307,7 +311,7 @@ body {
         right: 0;
         margin-left: 10em;
         // Mobile only style
-        @media only screen and (max-width: 37.4em) {
+        @media only screen and (max-width: $bp-med) {
             .link {
                 font-size: 0.9em;
             }
@@ -322,16 +326,14 @@ body {
         img {
             width: 100%;
             height: auto;
+            @include border-left-radius(em(4));
+            border-width: 0;
         }
     }
 }
 
-// Mobile only style
-@media only screen and (max-width: 37.4em) {
-    .article--title {
-        font-size: 1.2em;
-    }
 
+@media only screen and (max-width: $bp-med) {
     .article_imgLeft {
         .article--body {
             padding-left: 9em;
@@ -481,7 +483,7 @@ body {
     border: em(8) solid rgba(255,255,255,0.1);
     border-top-color: rgb(183, 183, 183);
     border-left-color: rgb(183, 183, 183);
-    border-radius: 50%;
+    @include border-radius(50%);
     @include transition(opacity 600ms, visibility 600ms);
     @include animation(loading 800ms linear 0s infinite);
     //animation-play-state: paused;

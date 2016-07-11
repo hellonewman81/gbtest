@@ -6,9 +6,8 @@ export default Ember.Route.extend({
 
   model() {
 
-
-
     return {
+
       books: [{
         title: "El Pooch",
         author: "Alex Nelson",
@@ -29,9 +28,6 @@ export default Ember.Route.extend({
 
 
     };
-
-
   }
-
 
 });
