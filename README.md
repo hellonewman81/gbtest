@@ -58,8 +58,6 @@ Build the UI as represented in the mockups included in the “screenshots” fol
 Included are a ’mobile' view and a 'desktop' view, so please think about responsive design in your solution
 as well as cross-browser compatibility for the latest versions of major browsers (Chrome, Firefox and IE).
 
-——
-
 ## Feature Requirements:
 
 ### Interaction Requirements:
@@ -69,7 +67,7 @@ as well as cross-browser compatibility for the latest versions of major browsers
 2. When the form from 1a is submitted, populate a new component for that book, and render it on the page.
   a. Do some simple validation on the content to prevent duplicate entries.
 
-### Optional:
+### Optional: (Not completed)
 1. Add the ability to add reviews and create a star indicator based on those reviews (1 to 5 scale);
 2. Add sorting based on different attributes of the data (e.g., book title)
 
@@ -82,8 +80,6 @@ as well as cross-browser compatibility for the latest versions of major browsers
 ### Optional:
 1. Make your code accessible.
 
-——
-
 ## Design notes:
 - The 'mobile' view has a menu icon, which when clicked, opens the menu and reveals the 3 menu items.
 - The 'desktop' view shows the 3 menu items inline, and the menu icon is not needed.
@@ -91,8 +87,6 @@ as well as cross-browser compatibility for the latest versions of major browsers
 We've attached the icons in the navigation bar for you to save you time, so do whatever you wish with them.
 
 Font used: http://www.google.com/fonts#UsePlace:use/Collection:Roboto
-
-——
 
 ## Implementation guide:
 We want to see how you structure and write your code, specifically at how you can
@@ -107,7 +101,4 @@ Any framework or library is allowed, but consider site speed implications when d
 
 Please comment your code, specifically around design decisions you’ve made during the course of implementing
 your solution.
-
-——
-
 
