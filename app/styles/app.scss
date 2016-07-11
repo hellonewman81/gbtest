@@ -48,6 +48,7 @@ $color: #fff;
 $max-width: 1024px;        // document max width
 $brandcolor: #eb1561;      // base brand colour
 $color_white: $color;        // base white colour
+$color_txt_secondary: #757575;
 $roboto: 'Roboto', serif;  // Custom font variable.
 
 $bp-small : 24em;
@@ -71,9 +72,15 @@ body {
     font-family: $roboto;
 }
 
+
+
 /*
- *  container
+ *  grid / columns
  */
+
+/*
+*  container
+*/
 
 .container {
     max-width: $max-width;
@@ -82,10 +89,6 @@ body {
     background: #e3e3e3;
 }
 
-
-/*
- *  grid / columns
- */
 
 /* ===== == = === 48em ( px) === = == ===== */
 
@@ -131,6 +134,8 @@ body {
     display: inline-block;
     padding: 1em;
 }
+
+
 
 /*
  *  Header
@@ -233,14 +238,21 @@ body {
 
 .article--body {
     padding:1em;
+    p {
+        color: $color_txt_secondary;
+        margin: 0;
+        + p {
+            margin: 1em 0;
+        }
+    }
 }
 
 .article--title {
-    margin:0 0 1em;
+    margin:0 0 em(7);
 }
 
 .article--footer {
-    border-top: 1px solid #dcdcdc;
+    border-top: em(1) solid #dcdcdc;
 }
 
 .article_welcome {
@@ -248,7 +260,7 @@ body {
         color: $brandcolor;
     }
 }
-
+// Modifiers
 // artcle with image positioned to left.
 .article_imgLeft {
 
@@ -262,6 +274,12 @@ body {
         left:0;
         right: 0;
         margin-left: 10em;
+        // Mobile only style
+        @media only screen and (max-width: 37.4em) {
+            .link {
+                font-size: 0.9em;
+            }
+        }
     }
 
     .article--img {
@@ -276,6 +294,28 @@ body {
     }
 }
 
+// Mobile only style
+@media only screen and (max-width: 37.4em) {
+    .article--title {
+        font-size: 1.2em;
+    }
+
+    .article_imgLeft {
+        .article--body {
+            padding-left: 9em;
+        }
+        .article--img {
+            width: 8em;
+        }
+        .article--footer {
+            margin-left: 8em;
+        }
+    }
+
+}
+
+
+
 /*
  *  forms
  */
@@ -285,9 +325,12 @@ body {
 }
 
 .form--label {
-    display: block;
+    display: inline-block;
 }
 
+.form--row {
+    margin-bottom: em(14);
+}
 
 .icon_burger {
     height: auto;
@@ -297,12 +340,75 @@ body {
        display: block;
         width: 24px;
         height: 3px;
-        border-radius: 1px;
-        margin-bottom: 4px;
+        border-radius: em(1);
+        margin-bottom: em(4);
     }
 }
 
 
+.form--header {
+  margin: 0 0 20px 0;
+}
+
+
+.form--title {
+  margin: 0 0 em(7) 0;
+}
+
+
+.form--headerContent {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 em(7) 0;
+}
+
+.form--label,
+.form--legend {
+    width: 25%;
+    float: left;
+    padding: em(7);
+}
+
+.form--input {
+    border-top: em(1) solid #ccc;
+    border-left: em(1) solid #ccc;
+    border-right: em(1) solid #eee;
+    border-bottom: em(1) solid #eee;
+    width: 50%;
+    padding: em(7);
+}
+
+.form--control {
+    margin-left: 25%;
+    button,
+    .btn {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .form--label,
+    .form--legend {
+        width: 100%;
+        float: none;
+        margin: 0 0 em(7) 0;
+        padding: 0;
+    }
+    .form--input {
+        width: 100%;
+    }
+    .form--control {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width : 56.25em) {
+  .form--label,
+  .form--legend {
+    text-align: right;
+  }
+}
 
 /* Messages */
 .msg {
@@ -312,11 +418,6 @@ body {
 .msg_error {
     color: red;
 }
-
-
-
-
-
 
 
 

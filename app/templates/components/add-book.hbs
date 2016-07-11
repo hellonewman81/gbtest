@@ -1,7 +1,23 @@
+<hr/>
+
 <form class="form" {{action "submit" on="submit"}}>
-    <label class="form--label">Title</label>
-    {{input value=title}}
-    <label class="form--label">author</label>
-    {{input value=author}}
-    <button class="btn" type="submit">Submit</button>
+    <header class="form--header">
+        <h2 class="form--title">Save book for later...</h2>
+    </header>
+    <!-- Form row for book name -->
+    <div class="form--row">
+        <label class="form--label" for="bookTitle">Title</label>
+        {{input value=title class="form--input text" aria-required="true" id="bookTitle" required="required"}}
+    </div>
+    <!-- Form row for book author -->
+    <div class="form--row">
+        <label class="form--label" for="bookAuthor">author</label>
+        {{input value=author class="form--input text" aria-required="true" id="bookAuthor" required="required"}}
+    </div>
+    <div class="form--row">
+        <div class="form--control">
+            <button type="submit" class="link link_primary link_inlineBlock">Submit</button>
+        </div>
+    </div>
 </form>
+

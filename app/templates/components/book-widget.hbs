@@ -1,11 +1,19 @@
-<p><button {{action "offerHide"}} class="link link_inlineBlock">No</button> <button {{action "offerShow"}} class="link link_primary link_inlineBlock">Yes</button></p>
 
+<!-- Action buttons -->
+<p>
+    <!-- Hide the book form -->
+    <button {{action "formHide"}} class="link link_inlineBlock">No</button>
+    <!-- Show the book form -->
+    <button {{action "formShow"}} class="link link_primary link_inlineBlock">Yes</button>
+</p>
+
+<!-- Check if add a new book form has been displayed -->
 {{#if displayForm}}
     {{add-book onAdd=(action 'addBook')}}
-    <div class="msg msg_error">
+        <!-- Display the error message if responseMessage is defined -->
         {{#if responseMessage}}
+            <div class="msg msg_error">
             {{responseMessage}}
+            </div>
         {{/if}}
-    </div>
 {{/if}}
-

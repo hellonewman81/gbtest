@@ -21,10 +21,10 @@ export default Ember.Component.extend({
         this.set('responseMessage', '');
       }
     },
-    offerShow() {
+    formShow() {
         this.set('displayForm', true);
     },
-    offerHide() {
+    formHide() {
         this.set('displayForm', false);
     }
   }

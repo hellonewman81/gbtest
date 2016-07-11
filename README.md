@@ -1,4 +1,4 @@
-# Todo-app
+# Genbook test appliacation
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -29,7 +29,7 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+### Running Tests (@TODO implement tests.)
 
 * `ember test`
 * `ember test --server`
