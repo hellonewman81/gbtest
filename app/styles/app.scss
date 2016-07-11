@@ -1,7 +1,7 @@
 /*
-    ==========================================================================
-        Normalize
-    ==========================================================================
+==========================================================================
+    Normalize
+==========================================================================
 */
 
 // Import and include normalize.css
@@ -16,9 +16,9 @@ HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
 
 /*
-    ==========================================================================
-       Theme custom styles
-    ==========================================================================
+==========================================================================
+   Theme custom styles
+==========================================================================
 */
 
 // Make compass sass mixens available
@@ -44,22 +44,21 @@ $browser-context: 16;
  *  Variables
  */
 
-$color: #fff;
-$max-width: 1024px;        // document max width
-$brandcolor: #eb1561;      // base brand colour
-$color_white: $color;        // base white colour
-$color_txt_secondary: #757575;
-$roboto: 'Roboto', serif;  // Custom font variable.
+$brandcolor: #eb1561;           // base brand colour
+$color_inverse: #fff;           // base white colour
+$color_txt_secondary: #757575;  // secondary text colour
+$color_txt_primary: #222;       // primary text colour
+$color_error: red;              // error colour
+$roboto: 'Roboto', serif;       // Custom font variable.
 
-$bp-small : 24em;
-$bp-small-2 : 29.75em;
-$bp-small-3 : 39.8em;
-$bp-med : 46.8em;
-$bp-med-2 : 48em;
-$bp-large : 50em;
-$bp-large-2 : 54.5em;
-$bp-xl : 60em;
-$bp-xl-2 : 67em;
+$bp-small : 20em;       // (320px)
+$bp-small-2 : 30em;     // (480px)
+$bp-med : 37.5em;       // (600px)
+$bp-med-2 : 48em;       // (768px)
+$bp-large : 56.25em;    // (900px)
+$bp-large-2 : 68.75em;  // (1100px)
+$bp-xl : 81.25em;       // (1300px)
+
 
 /*
  *  Theme
@@ -83,7 +82,7 @@ body {
 */
 
 .container {
-    max-width: $max-width;
+    max-width: $bp-large-2;
     min-width: em(320);
     margin: 0 auto;
     background: #e3e3e3;
@@ -109,12 +108,25 @@ body {
     }
 }
 
+
+/*
+    text
+*/
+
+.text--secondary {
+    color: $color_txt_secondary;
+}
+
+.text--primary {
+    color: $color_txt_primary;
+}
+
 /*
  *  buttons
  */
 
 .link, a {
-    color: Black;
+    color: $color_txt_primary;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -147,7 +159,7 @@ body {
 }
 
 .header--title {
-    color:  $color;
+    color:  $color_inverse;
     margin: 0 0 0 1em;
 }
 
@@ -162,7 +174,9 @@ body {
     top: 2em;
 }
 
-@media only screen and (min-width: 37.5em) {
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: $bp-med) {
     .header--title {
         margin-left: 0;
     }
@@ -177,13 +191,13 @@ body {
  */
 
 .navbar{
-    background-color: $color_white;
+    background-color: $color_inverse;
     margin: 0;
     position: relative;
 }
 
 .navbar--list{
-    background-color: $color_white;
+    background-color: $color_inverse;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -205,7 +219,9 @@ body {
 
 }
 
-@media only screen and (min-width: 37.5em) {
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: $bp-med) {
     .navbar--list{
         display: block; // override with cascade for larger browsers
         position: relative;
@@ -221,10 +237,10 @@ body {
  */
 
 .article {
-    background-color: $color_white;
+    background-color: $color_inverse;
     margin-bottom: 1em;
-    @include box-shadow(#dddddd 2px 2px 10px);
-    @include border-radius(4px, 4px);
+    @include box-shadow(#dddddd em(2) em(2) em(10));
+    @include border-radius(em(4), em(4));
     position: relative;
 }
 
@@ -239,7 +255,6 @@ body {
 .article--body {
     padding:1em;
     p {
-        color: $color_txt_secondary;
         margin: 0;
         + p {
             margin: 1em 0;
@@ -314,8 +329,6 @@ body {
 
 }
 
-
-
 /*
  *  forms
  */
@@ -338,8 +351,8 @@ body {
     span{
        background-color: #fff;
        display: block;
-        width: 24px;
-        height: 3px;
+        width: em(24);
+        height: em(3);
         border-radius: em(1);
         margin-bottom: em(4);
     }
@@ -347,19 +360,11 @@ body {
 
 
 .form--header {
-  margin: 0 0 20px 0;
+  margin: 0 0 em(20) 0;
 }
 
 
 .form--title {
-  margin: 0 0 em(7) 0;
-}
-
-
-.form--headerContent {
-  clear: both;
-  overflow: hidden;
-  padding: 1px;
   margin: 0 0 em(7) 0;
 }
 
@@ -387,7 +392,9 @@ body {
     }
 }
 
-@media only screen and (max-width: 37.5em) {
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (max-width: $bp-med) {
     .form--label,
     .form--legend {
         width: 100%;
@@ -403,7 +410,9 @@ body {
     }
 }
 
-@media only screen and (min-width : 56.25em) {
+/* ===== == = === 56.25em (900px) === = == ===== */
+
+@media only screen and (min-width : $bp-large) {
   .form--label,
   .form--legend {
     text-align: right;
@@ -412,50 +421,11 @@ body {
 
 /* Messages */
 .msg {
-    padding: 1em;
+    // padding: 1em;
 }
 
 .msg_error {
-    color: red;
-}
-
-
-
-/* ===== == = === 20em (320px) === = == ===== */
-
-@media only screen and (min-width : 20em) {
-}
-
-/* ===== == = === 30em (480px) === = == ===== */
-
-@media only screen and (min-width : 30em) {
-
-}
-
-/* ===== == = === 37.5em (600px) === = == ===== */
-
-@media only screen and (min-width: 37.5em) {
-
-}
-
-/* ===== == = === 48em (768px) === = == ===== */
-
-@media only screen and (min-width : 48em) {
-}
-
-/* ===== == = === 56.25em (900px) === = == ===== */
-
-@media only screen and (min-width : 56.25em) {
-}
-
-/* ===== == = === 68.75em (1100px) === = == ===== */
-
-@media only screen and (min-width : 68.75em) {
-}
-
-/* ===== == = === 81.25em (1300px) === = == ===== */
-
-@media only screen and (min-width : 81.25em) {
+    color: $color_error;
 }
 
 
@@ -487,11 +457,11 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 50px;
-    height: 50px;
-    margin-left: -25px;
-    margin-top: -25px;
-    border: 8px solid rgba(255,255,255,0.1);
+    width: em(50);
+    height: em(50);
+    margin-left: em(-25);
+    margin-top: em(-25);
+    border: em(8) solid rgba(255,255,255,0.1);
     border-top-color: rgb(183, 183, 183);
     border-left-color: rgb(183, 183, 183);
     border-radius: 50%;
@@ -515,7 +485,9 @@ body {
   }
 }
 
-@media only screen and (min-width: 37.5em) {
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: $bp-med) {
     .backdrop_smallOnly {
         .js_navActive & {
             > span {
@@ -533,8 +505,6 @@ body {
     }
 }
 
-
-
 @include keyframes(loading) {
   0% {
     @include transform(rotate(0deg));
@@ -543,5 +513,11 @@ body {
     @include transform(rotate(360deg));
   }
 }
+
+/*
+==========================================================================
+   Helper styles
+==========================================================================
+*/
 
 @import "helpers";

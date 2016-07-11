@@ -1,12 +1,12 @@
 {{#each featured as |feature|}}
 <article class="article {{if class 'article_imgLeft'}} clearfix">
-
     <figure class="article--img">
-        <img src="{{feature.thumb}}" alt="{{ feature.title }}" />
+        <img src="{{feature.thumb}}" alt="{{feature.title}}" />
     </figure>
     <div class="article--body">
-        <h2 class="article--title">{{ feature.title }}</h2>
-        <p>{{ feature.author }}</p>
+        <h2 class="article--title text--secondary">{{feature.title}}</h2>
+        <p class="text--primary">{{feature.place}}</p>
+        <p class="text--primary">{{feature.description }}</p>
     </div>
     {{#if feature}}
     <footer class="article--footer">

@@ -1,22 +1,30 @@
 <hr/>
-
+<!-- form to add new books to users list -->
 <form class="form" {{action "submit" on="submit"}}>
+    <!-- form header -->
     <header class="form--header">
-        <h2 class="form--title">Save book for later...</h2>
+        <h2 class="form--title">Save book for later</h2>
     </header>
     <!-- Form row for book name -->
     <div class="form--row">
         <label class="form--label" for="bookTitle">Title</label>
-        {{input value=title class="form--input text" aria-required="true" id="bookTitle" required="required"}}
+        {{input value=title class="form--input text" aria-required="true" id="bookTitle" required="required" placeholder="Enter book name"}}
     </div>
     <!-- Form row for book author -->
     <div class="form--row">
-        <label class="form--label" for="bookAuthor">author</label>
-        {{input value=author class="form--input text" aria-required="true" id="bookAuthor" required="required"}}
+        <label class="form--label" for="bookAuthor">Author</label>
+        {{input value=author class="form--input text" aria-required="true" id="bookAuthor" required="required" placeholder="Enter book author"}}
     </div>
+    <!-- form controls -->
     <div class="form--row">
         <div class="form--control">
-            <button type="submit" class="link link_primary link_inlineBlock">Submit</button>
+            <button type="submit" class="link link_primary link_inlineBlock p_uppercase">Submit</button>
+            {{#if error}}
+                <!-- Display the error message if responseMessage is defined -->
+                <div class="msg msg_error">
+                {{error}}
+                </div>
+            {{/if}}
         </div>
     </div>
 </form>

@@ -1,4 +1,3 @@
-
 <!-- Action buttons -->
 <p>
     <!-- Hide the book form -->
@@ -9,11 +8,5 @@
 
 <!-- Check if add a new book form has been displayed -->
 {{#if displayForm}}
-    {{add-book onAdd=(action 'addBook')}}
-        <!-- Display the error message if responseMessage is defined -->
-        {{#if responseMessage}}
-            <div class="msg msg_error">
-            {{responseMessage}}
-            </div>
-        {{/if}}
+    {{add-book onAdd=(action 'addBook') error=responseMessage}}
 {{/if}}

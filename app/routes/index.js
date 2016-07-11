@@ -10,19 +10,20 @@ export default Ember.Route.extend({
 
     return {
       books: [{
-        title: "Create Ember app",
-        author: "Create Ember 212",
+        title: "El Pooch",
+        author: "Alex Nelson",
         thumb: 'assets/images/thumb-1.png'
       },
       {
-        title: "Read Ember Igniter",
-        author: "Master Ember",
+        title: "The Flight",
+        author: "Scott Masterson",
         thumb: 'assets/images/thumb-2.png'
        }],
 
        featured: [{
-        title: "Create Ember app",
-        author: "Create Ember 212",
+        title: "Number 10",
+        place: "Whitehave Beach",
+        description: "Whitsunday Island, Whitsunday Islands.",
         thumb: 'assets/images/thumb-3.png'
       }]
 
