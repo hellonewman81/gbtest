@@ -1,4 +1,4 @@
-// app/routes/todos.js
+// app/routes/index.js
 
 import Ember from 'ember';
 

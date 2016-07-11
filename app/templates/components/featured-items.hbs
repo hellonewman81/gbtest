@@ -1,14 +1,17 @@
 {{#each featured as |feature|}}
 <article class="article {{if class 'article_imgLeft'}} clearfix">
+    <!-- image -->
     <figure class="article--img">
         <img src="{{feature.thumb}}" alt="{{feature.title}}" />
     </figure>
+    <!-- body -->
     <div class="article--body">
-        <h2 class="article--title text--secondary">{{feature.title}}</h2>
+        <h2 class="article--title text--secondary text--normal">{{feature.title}}</h2>
         <p class="text--primary">{{feature.place}}</p>
         <p class="text--primary">{{feature.description }}</p>
     </div>
     {{#if feature}}
+    <!-- footer -->
     <footer class="article--footer">
         <p><a href="#" class="link link_inlineBlock p_uppercase">Share</a><a href="#" class="link link_primary link_inlineBlock p_uppercase">Explore</a></p>
     </footer>

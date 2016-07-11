@@ -18,6 +18,8 @@ HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 /*
 ==========================================================================
    Theme custom styles
+
+   NB: theme not yet split into module files for readablity
 ==========================================================================
 */
 
@@ -121,6 +123,10 @@ body {
     color: $color_txt_primary;
 }
 
+.text--normal {
+    font-size:1em;
+}
+
 /*
  *  buttons
  */
@@ -219,6 +225,12 @@ body {
 
 }
 
+@media only screen and (max-width: 37.4em) {
+    .navbar--link{
+        display: block;
+    }
+}
+
 /* ===== == = === 37.5em (600px) === = == ===== */
 
 @media only screen and (min-width: $bp-med) {
@@ -257,7 +269,7 @@ body {
     p {
         margin: 0;
         + p {
-            margin: 1em 0;
+            margin: em(7) 0;
         }
     }
 }

@@ -10,10 +10,6 @@ export default Ember.Component.extend({
             Ember.$('body').removeClass('js_navActive');
         });
 
-        Ember.$('body').on('click', '.navbar', function(event){
-           // event.stopPropagation();
-        });
-
     },
     actions: {
         toggleNav(){
